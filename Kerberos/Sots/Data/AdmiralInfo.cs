@@ -119,7 +119,6 @@ namespace Kerberos.Sots.Data
 			switch (this.Race)
 			{
 				case "human":
-				case "tarkas":
 				case "morrigi":
 					switch (this.Gender)
 					{
@@ -127,6 +126,15 @@ namespace Kerberos.Sots.Data
 							return "A_";
 						case "female":
 							return "B_";
+					}
+					break;
+				case "tarka":
+					switch (this.Gender)
+					{
+						case "male":
+							return "B_";
+						case "female":
+							return "A_";
 					}
 					break;
 				case "hiver":
