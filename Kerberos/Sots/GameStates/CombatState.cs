@@ -172,13 +172,10 @@ namespace Kerberos.Sots.GameStates
 
 		public override void OnEngineMessage(InteropMessageID messageID, ScriptMessageReader mr)
 		{
-			if (messageID == InteropMessageID.IMID_SCRIPT_MOVE_ORDER)
+			if (messageID != InteropMessageID.IMID_SCRIPT_MOVE_ORDER)
 			{
-				if (this.GetCommanderForPlayerID(mr.ReadInteger()) == null)
-					;
-			}
-			else
 				base.OnEngineMessage(messageID, mr);
+			}
 		}
 	}
 }

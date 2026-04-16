@@ -168,7 +168,7 @@ namespace Kerberos.Sots
 				{
 					gameState = this._gameStateMachine.GetGameState(scriptHostParams.InitialStateName);
 				}
-				catch (ArgumentOutOfRangeException ex)
+				catch (ArgumentOutOfRangeException)
 				{
 				}
 			}
@@ -395,7 +395,7 @@ namespace Kerberos.Sots
 						IsBuiltin = false
 					})));
 				}
-				catch (DirectoryNotFoundException ex)
+				catch (DirectoryNotFoundException)
 				{
 				}
 			}
@@ -420,7 +420,7 @@ namespace Kerberos.Sots
 												IsBuiltin = false
 											}).ToArray<SavedGameFilename>();
 			}
-			catch (DirectoryNotFoundException ex)
+			catch (DirectoryNotFoundException)
 			{
 				if (savedGameFilenameArray == null)
 					savedGameFilenameArray = new SavedGameFilename[0];
@@ -1007,13 +1007,11 @@ namespace Kerberos.Sots
 				else
 				{
 					int num = gameDatabase.InsertPlayer(player.EmpireName, player.Faction, homeworldID, one, player.ShipColor, player.GetBadgeTextureAssetPath(assetDatabase), player.GetAvatarTextureAssetPath(assetDatabase), (double)game.GameSetup.Players[startLocationList[index1].PlayerIndex].InitialTreasury, player.SubfactionIndex, true, false, false, player.Team, player.AIDifficulty);
-					if (!player.AI)
+					if (player.AI)
 					{
-						if (!player.localPlayer)
-							;
-					}
-					else
 						intList.Add(num);
+					}
+
 					App.BuildTeamDiplomacyStates(gameDatabase);
 					App.AddStratModifiers(gameDatabase, assetDatabase, num);
 					if ((flags & GameSession.Flags.NoTechTree) == (GameSession.Flags)0)

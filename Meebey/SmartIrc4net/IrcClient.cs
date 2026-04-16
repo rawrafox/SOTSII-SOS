@@ -666,7 +666,7 @@ namespace Meebey.SmartIrc4net
 					return;
 				this._RejoinChannels();
 			}
-			catch (NotConnectedException ex)
+			catch (NotConnectedException)
 			{
 			}
 		}
@@ -1045,7 +1045,7 @@ namespace Meebey.SmartIrc4net
 								{
 									channel.Bans.Add(current1);
 								}
-								catch (ArgumentException ex)
+								catch (ArgumentException)
 								{
 								}
 							}
@@ -1079,7 +1079,7 @@ namespace Meebey.SmartIrc4net
 										{
 											((NonRfcChannel)channel).UnsafeHalfops.Add((object)current2, (object)this.GetIrcUser(current2));
 										}
-										catch (ArgumentException ex)
+										catch (ArgumentException)
 										{
 										}
 									  ((NonRfcChannelUser)this.GetChannelUser(ircdata.Channel, current2)).IsHalfop = true;
@@ -1127,7 +1127,7 @@ namespace Meebey.SmartIrc4net
 								{
 									channel.UserLimit = int.Parse(current4);
 								}
-								catch (FormatException ex)
+								catch (FormatException)
 								{
 								}
 							}
@@ -1151,7 +1151,7 @@ namespace Meebey.SmartIrc4net
 									{
 										channel.UnsafeOps.Add((object)current5, (object)this.GetIrcUser(current5));
 									}
-									catch (ArgumentException ex)
+									catch (ArgumentException)
 									{
 									}
 									this.GetChannelUser(ircdata.Channel, current5).IsOp = true;
@@ -1188,7 +1188,7 @@ namespace Meebey.SmartIrc4net
 									{
 										channel.UnsafeVoices.Add((object)current6, (object)this.GetIrcUser(current6));
 									}
-									catch (ArgumentException ex)
+									catch (ArgumentException)
 									{
 									}
 									this.GetChannelUser(ircdata.Channel, current6).IsVoice = true;

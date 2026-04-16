@@ -343,7 +343,7 @@ namespace Kerberos.Sots.Data.SQLite
 			{
 				SQLiteConnection.StepStatement(statementPtr);
 			}
-			catch (SQLiteException ex)
+			catch (SQLiteException)
 			{
 				throw new SQLiteException("SQL statement failed: \n" + statement + "\n-- " + this.GetErrorMessage());
 			}

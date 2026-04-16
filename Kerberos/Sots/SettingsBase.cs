@@ -75,7 +75,7 @@ namespace Kerberos.Sots
 				{
 					prop.SetValue((object)this, Convert.ChangeType((object)propertyElement.InnerText, prop.PropertyType), (object[])null);
 				}
-				catch (FormatException ex)
+				catch (FormatException)
 				{
 					App.Log.Warn(string.Format("Could not convert {0} value '{1}' to type {2}. Keeping existing value '{3}'.", (object)prop.Name, (object)propertyElement.InnerText, (object)prop.PropertyType.Name, (object)prop.GetValue((object)this, (object[])null).ToString()), "config");
 				}

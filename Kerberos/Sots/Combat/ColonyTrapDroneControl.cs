@@ -240,9 +240,7 @@ namespace Kerberos.Sots.Combat
 				return;
 			using (List<ColonyTrapDroneControl>.Enumerator enumerator = this.m_Controller.CombatAIControllers.OfType<ColonyTrapDroneControl>().ToList<ColonyTrapDroneControl>().GetEnumerator())
 			{
-				do
-					;
-				while (enumerator.MoveNext() && !enumerator.Current.RequestingHelpWithTarget());
+				while (enumerator.MoveNext() && !enumerator.Current.RequestingHelpWithTarget()) { }
 			}
 		}
 

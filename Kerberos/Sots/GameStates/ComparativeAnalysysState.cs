@@ -169,8 +169,6 @@ namespace Kerberos.Sots.GameStates
 		private PsionicSelector _psionicSelector;
 		private string _designName;
 		private string _originalName;
-		private int _deleteItemID;
-		private string _deleteItemDialog;
 		private int _PsionicIndex;
 		private bool _RetrofitMode;
 		private int _SelectedPlayer;
@@ -987,8 +985,6 @@ namespace Kerberos.Sots.GameStates
 				}
 				else if ("starmap" == panelName)
 					this.App.SwitchGameState<StarMapState>();
-				else if (!("weaponTest" == panelName))
-					;
 			}
 			else if (msgType == "color_changed")
 			{

@@ -37,7 +37,7 @@ namespace Kerberos.Sots.Data.ShipFramework
 				};
 				return true;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				value = new Size();
 				return false;

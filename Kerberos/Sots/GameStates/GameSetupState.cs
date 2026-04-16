@@ -367,8 +367,6 @@ namespace Kerberos.Sots.GameStates
 						else
 							this.App.UI.ClearSelection("gameStarMapList");
 					}
-					else if (!(panelName == "gameScenariosCheckbox"))
-						;
 				}
 				else if (msgType == "checkbox_clicked")
 				{

@@ -771,7 +771,7 @@ namespace Kerberos.Sots.Data
 			{
 				this.db.SaveBackup(filename);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				GameDatabase.Trace("FAILED.");
 				throw;

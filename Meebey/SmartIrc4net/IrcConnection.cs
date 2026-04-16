@@ -337,12 +337,12 @@ namespace Meebey.SmartIrc4net
 			{
 				if (this._Reader != null)
 				{
-					try
+                    try
 					{
 						this._Reader.Close();
 					}
-					catch (ObjectDisposedException ex2)
-					{
+					catch (ObjectDisposedException)
+                    {
 					}
 				}
 				if (this._Writer != null)
@@ -351,7 +351,7 @@ namespace Meebey.SmartIrc4net
 					{
 						this._Writer.Close();
 					}
-					catch (ObjectDisposedException ex2)
+					catch (ObjectDisposedException)
 					{
 					}
 				}
@@ -409,9 +409,7 @@ namespace Meebey.SmartIrc4net
 			}
 			else
 			{
-				do
-					;
-				while (this.ReadLine(false).Length > 0);
+				while (this.ReadLine(false).Length > 0) { }
 			}
 		}
 
@@ -473,12 +471,12 @@ namespace Meebey.SmartIrc4net
 				this._Writer.Write(data + "\r\n");
 				this._Writer.Flush();
 			}
-			catch (IOException ex)
+			catch (IOException)
 			{
 				this.IsConnectionError = true;
 				return false;
 			}
-			catch (ObjectDisposedException ex)
+			catch (ObjectDisposedException)
 			{
 				this.IsConnectionError = true;
 				return false;
@@ -545,7 +543,7 @@ namespace Meebey.SmartIrc4net
 				else
 					this.Disconnect();
 			}
-			catch (ConnectionException ex)
+			catch (ConnectionException)
 			{
 			}
 		}
@@ -583,7 +581,7 @@ namespace Meebey.SmartIrc4net
 				{
 					this._Thread.Abort();
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 				}
 				this._Thread.Join();
@@ -591,7 +589,7 @@ namespace Meebey.SmartIrc4net
 				{
 					this._Connection._Reader.Close();
 				}
-				catch (ObjectDisposedException ex)
+				catch (ObjectDisposedException)
 				{
 				}
 			}
@@ -606,7 +604,7 @@ namespace Meebey.SmartIrc4net
 						while (this._Connection.IsConnected && (str = this._Connection._Reader.ReadLine()) != null)
 							this._Queue.Enqueue((object)str);
 					}
-					catch (IOException ex)
+					catch (IOException)
 					{
 					}
 					finally
@@ -615,11 +613,11 @@ namespace Meebey.SmartIrc4net
 							this._Connection.IsConnectionError = true;
 					}
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 					Thread.ResetAbort();
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 				}
 			}
@@ -661,7 +659,7 @@ namespace Meebey.SmartIrc4net
 				{
 					this._Thread.Abort();
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 				}
 				this._Thread.Join();
@@ -669,7 +667,7 @@ namespace Meebey.SmartIrc4net
 				{
 					this._Connection._Writer.Close();
 				}
-				catch (ObjectDisposedException ex)
+				catch (ObjectDisposedException)
 				{
 				}
 			}
@@ -686,7 +684,7 @@ namespace Meebey.SmartIrc4net
 							Thread.Sleep(this._Connection._SendDelay);
 						}
 					}
-					catch (IOException ex)
+					catch (IOException)
 					{
 					}
 					finally
@@ -695,11 +693,11 @@ namespace Meebey.SmartIrc4net
 							this._Connection.IsConnectionError = true;
 					}
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 					Thread.ResetAbort();
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 				}
 			}
@@ -821,7 +819,7 @@ namespace Meebey.SmartIrc4net
 				{
 					this._Thread.Abort();
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 				}
 			}
@@ -856,11 +854,11 @@ namespace Meebey.SmartIrc4net
 						}
 					}
 				}
-				catch (ThreadAbortException ex)
+				catch (ThreadAbortException)
 				{
 					Thread.ResetAbort();
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 				}
 			}

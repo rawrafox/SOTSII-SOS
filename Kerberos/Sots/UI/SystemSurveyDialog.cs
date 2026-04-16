@@ -28,7 +28,6 @@ namespace Kerberos.Sots.UI
 		private OrbitCameraController _camera;
 		private Sky _sky;
 		private GameObjectSet _crits;
-		private bool _critsInitialized;
 		private int _fleetID;
 		private SystemSurveyDialog.PlanetFilterMode _currentFilterMode;
 		private static bool FORCETRAPHACK;

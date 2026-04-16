@@ -128,7 +128,7 @@ namespace Meebey.SmartIrc4net
 			{
 				int.Parse(message);
 			}
-			catch (FormatException ex)
+			catch (FormatException)
 			{
 			}
 			string rawMessage = data.RawMessageArray[8];

@@ -293,8 +293,6 @@ namespace Kerberos.Sots.GameStates
 				this._manager.PostSetProp("SyncSystemPositions");
 				this._finishing = true;
 			}
-			else if (!(msgType == "DragAndDropEvent"))
-				;
 		}
 
 		public bool OnKeyBindPressed(HotKeyManager.HotKeyActions action, string gamestates)

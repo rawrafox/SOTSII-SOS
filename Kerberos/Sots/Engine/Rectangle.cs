@@ -64,7 +64,7 @@ namespace Kerberos.Sots.Engine
 			{
 				return (Rectangle)obj == this;
 			}
-			catch (InvalidCastException ex)
+			catch (InvalidCastException)
 			{
 				return false;
 			}

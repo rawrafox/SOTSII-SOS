@@ -197,26 +197,26 @@ namespace Kerberos.Sots.UI
 						{
 							this.Players = gameDatabase.GetPlayerInfos().Where<PlayerInfo>((Func<PlayerInfo, bool>)(x => x.isStandardPlayer)).ToArray<PlayerInfo>();
 						}
-						catch (Exception ex)
+						catch (Exception)
 						{
 						}
 						try
 						{
 							this.Turn = gameDatabase.GetTurnCount();
 						}
-						catch (Exception ex)
+						catch (Exception)
 						{
 						}
 						try
 						{
 							this.MapName = gameDatabase.GetMapName();
 						}
-						catch (Exception ex)
+						catch (Exception)
 						{
 						}
 					}
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 				}
 			}

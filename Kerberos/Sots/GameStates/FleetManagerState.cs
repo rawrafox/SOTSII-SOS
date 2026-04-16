@@ -394,8 +394,6 @@ namespace Kerberos.Sots.GameStates
 						fleetID = int.Parse(msgParams[0]);
 					this.SyncFleetShipsList(fleetID);
 				}
-				if (!(panelName == "partFleetShips"))
-					;
 			}
 			else if (msgType == "button_clicked")
 			{

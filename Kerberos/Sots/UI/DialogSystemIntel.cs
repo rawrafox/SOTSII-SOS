@@ -177,8 +177,6 @@ namespace Kerberos.Sots.UI
 			{
 				if (panelName == "okButton")
 					this._app.UI.CloseDialog((Dialog)this, true);
-				if (!(panelName == "detailbutton"))
-					;
 			}
 			else if (msgType == "list_sel_changed")
 			{

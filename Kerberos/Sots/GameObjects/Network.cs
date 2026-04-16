@@ -1085,7 +1085,7 @@ namespace Kerberos.Sots.GameObjects
 				this.PostSetInt(4, (object)str, (object)password, (object)this._connectionDialog.ID);
 				return true;
 			}
-			catch (SocketException ex)
+			catch (SocketException)
 			{
 				this._connectionDialog.AddString("Unable connect to Host: Address Invalid.");
 				return false;

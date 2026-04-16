@@ -100,7 +100,7 @@ namespace Kerberos.Sots.GameStates
 				xmlDocument.Load(selectedConfigFile);
 				this.App.SwitchGameState<CombatState>((object)new PendingCombat(), (object)xmlDocument, (object)true);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				this.App.UI.SetEnabled("gameNextButton", false);
 				throw;

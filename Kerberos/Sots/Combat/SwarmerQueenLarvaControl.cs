@@ -223,7 +223,6 @@ namespace Kerberos.Sots.Combat
 				Vector3 vector3_1 = target.Position - this.m_SwarmerHive.Position;
 				Vector3 vector3_2 = target.Maneuvering.Destination - this.m_SwarmerHive.Position;
 				Vector3 vector3_3 = (double)vector3_2.LengthSquared < (double)vector3_1.LengthSquared ? target.Maneuvering.Destination : target.Position;
-				Vector3 vector3_4 = new Vector3();
 				Vector3 vector3_5 = (double)vector3_2.LengthSquared >= (double)vector3_1.LengthSquared ? vector3_1 : vector3_2;
 				vector3_5.Y = 0.0f;
 				float length = vector3_5.Length;

@@ -91,7 +91,7 @@ namespace Kerberos.Sots.Steam
 			{
 				this._steam.SetAchievement(cheevo.ToString());
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				App.Log.Warn("SetAchievement: " + cheevo.ToString() + " failed.", "steam");
 			}
@@ -104,7 +104,7 @@ namespace Kerberos.Sots.Steam
 			{
 				flag = this._steam.GetAchievement(cheevo.ToString());
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				App.Log.Warn("GetAchievement " + cheevo.ToString() + " failed.", "steam");
 			}
